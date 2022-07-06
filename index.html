@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+
     <title>Frontend Mentor | Tip calculator app</title>
 
   </head>
@@ -15,56 +22,76 @@
     </header>
 
     <main>
-      <section id="bill">
-        <div class="bill-value">
-          <span>Bill</span>
-
-          <div class="bill-input">
-            <img src="./images/icon-dollar.svg" alt="icon dollar">
-            <input type="number">
+      <div class="container">
+        <section id="bill">
+          <div class="bill-value">
+            <p>Bill</p>
+  
+            <div class="bill-input">
+              <img src="./images/icon-dollar.svg" alt="icon dollar">
+              <input type="text" placeholder="0" id="inputBill">
+            </div>
           </div>
-        </div>
-
-        <div class="bill-tip">
-          <span>Select Tip %</span>
-
-          <div class="bill-tip-percentage">
-            <ul>
-              <li>5%</li>
-              <li>10%</li>
-              <li>15%</li>
-              <li>25%</li>
-              <li>50%</li>
-              <li>Custom</li>
-            </ul>
+  
+          <div class="bill-tip">
+            <p>Select Tip %</p>
+  
+            <div class="bill-tip-percentage">
+              <ul>
+                <li>
+                  <button class="percentage" value="5">5%</button>
+                </li>
+                <li>
+                  <button class="percentage" value="10">10%</button>
+                </li>
+                <li>
+                  <button class="percentage" value="15">15%</button>
+                </li>
+                <li>
+                  <button class="percentage" value="25">25%</button>
+                </li>
+                <li>
+                  <button class="percentage" value="50">50%</button>
+                </li>
+                <li>
+                  <input id="button-custom" class="percentage" type="text" placeholder="Custom">
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-
-        <div class="bill-people">
-          <span>Number of People</span>
-          <div class="bill-input">
-            <img src="./images/icon-person.svg" alt="icon person">
-            <input type="number">
+  
+          <div class="bill-people">
+            <div class="bill-people-message">
+              <p>Number of People</p>
+              <p class="message-error">Con't be zero</p>
+            </div>
+            <div class="bill-input">
+              <img src="./images/icon-person.svg" alt="icon person">
+              <input id="inputPersons" type="text" placeholder="0">
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section id="tip">
-        <div class="tip-amount">
-          <p>Tip Amount</p>
-          <p>/ person</p>
-          <p id="tipAmount" class="tip-value">$4.27</p>
-        </div>
-
-        <div class="tip-total">
-          <p>Total</p>
-          <p>/ person</p>
-          <p id="tipTotal" class="tip-value">$32.79</p>
-        </div>
-
-        <button class="reset">RESET</button>
-      </section>
+        </section>
+  
+        <section id="tip">
+          <div class="tip-value">
+            <p>Tip Amount</p>
+            <p>/ person</p>
+            <p id="tipAmount">$0.00</p>
+          </div>
+  
+          <div class="tip-value">
+            <p>Total</p>
+            <p>/ person</p>
+            <p id="Total">$0.00</p>
+          </div>
+  
+          <button id="buttonReset" class="reset">RESET</button>
+        </section>
+      </div>
+      
     </main>
+
+    <script src="./script.js"></script>
 
     <!-- <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
