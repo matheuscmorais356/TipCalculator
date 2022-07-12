@@ -18,7 +18,7 @@ Os usuários devem ser capazes de:
 
 ### Links
 
-- Solution URL: [Clique aqui!](https://your-solution-url.com](https://matheuscmorais356.github.io/TipCalculator/)
+- Solution URL: [Clique aqui!](https://matheuscmorais356.github.io/TipCalculator/)
 
 ### Construído com
 
