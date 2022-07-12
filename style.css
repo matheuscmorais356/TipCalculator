@@ -25,18 +25,14 @@
 
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
 html {
   background: var(--Light-grayish-cyan);
   font-size: 62.5%;
 }
 
 body {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +59,7 @@ button {
 
 
 header {
-  margin-block: 3rem;
+  margin: 3rem;
 }
 
  main {
@@ -83,18 +79,41 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
+}
+
+/* Message error */
+
+.bill-message {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-input.error {
+  border: .2rem solid var(--Red);
+  transition: ease .2s;
+}
+
+.bill-input.error:hover {
+  border: .3rem solid var(--Red);
+}
+
+.message-error {
+  color: var(--Red);
+  opacity: 0;
+}
+
+.active-error {
+  opacity: 1;
 }
 
 /* Bill */
 
 #bill {
   width: 100%;
-}
-
-.bill-value,
-.bill-tip {
-  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .bill-input {
@@ -126,6 +145,8 @@ header {
  
 }
 
+/* Button percentage */
+
 .bill-tip-percentage ul {
   display: grid;
   gap: 1.5rem;
@@ -153,12 +174,13 @@ header {
 .bill-tip-percentage ul li button.percentage-active {
   background: var(--Strong-cyan);
   color: black;
-  transition: ease .2s;
+  transition: transform .2s;
 }
 
 .bill-tip-percentage ul li button:hover {
   background: var(--Light-grayish-cyan);
   color: black;
+  transform: scale(1.05);
 }
 
 .bill-tip-percentage ul li>#button-custom {
@@ -170,12 +192,13 @@ header {
   height: 100%;
   background: transparent;
   border: none; 
+  border-radius: .5rem;
   text-align: center;
   font-size: 2.4rem;
   transition: ease .2s;
 }
 
-#button-custom:focus {
+#button-custom:hover {
   border: .2rem solid var(--Strong-cyan);
   border-radius: .5rem;
 }
@@ -185,28 +208,28 @@ header {
   border-radius: .5rem;
 }
 
-.bill-people-message {
-  display: flex;
-  justify-content: space-between;
+.bill-tip-percentage .shake {
+  animation: shake .3s;
 }
 
-.bill-input.error {
-  border: .2rem solid var(--Red);
-  transition: ease .2s;
+@keyframes shake {
+  10%, 90% {
+      transform: translate3d(-0.2rem, 0, 0);
+  }
+
+  20%, 80% {
+      transform: translate3d(0.4rem, 0 ,0);
+  }
+
+  30%, 50%, 70% {
+      transform: translate3d(-0.8rem, 0 ,0);
+  }
+
+  40%, 60% {
+      transform: translate3d(0.8rem, 0 ,0);
+  }
 }
 
-.bill-input.error:hover {
-  border: .3rem solid var(--Red);
-}
-
-.message-error {
-  color: var(--Red);
-  opacity: 0;
-}
-
-.active-error {
-  opacity: 1;
-}
 
 /* Tip */
 
@@ -258,15 +281,104 @@ header {
   border: none;
   border-radius: .5rem;
   opacity: 0.45;
+  transition: transform .2s;
 }
 
 .reset:hover {
   background: var(--Light-grayish-cyan);
+  transform: scale(1.05);
 }
 
 .reset.button-active {
   opacity: 1;
 }
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  margin: 3rem;
+}
+
+
+/* Responsivo */
+
+@media (min-width: 760px) {
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: initial
+  }
+
+  body {
+    height: 100vh;
+    justify-content: center;
+  }
+
+  main {
+    height: auto;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 80rem;
+    height: 40rem;
+    padding: 3rem;
+    background: var(--White);
+    flex-direction: row;
+    border-radius: 2rem;
+  }
+
+  #bill {
+    width: 100%;
+    height: 100%;
+  }
+
+  #bill .bill-tip .bill-tip-percentage ul{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  #bill .bill-tip .bill-tip-percentage .percentage {
+    font-size: 2rem;
+  }
+
+  #tip {
+    height: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  #tip .tip-bill {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .tip-value p:nth-child(1){
+    color: var(--White);
+    font-size: 1.8rem;
+  }
+  
+  .tip-value p:nth-child(2){
+    font-size: 1.4rem;
+  }
+  
+  .tip-value p:nth-child(3){
+    justify-content: flex-end;
+    font-size: 3rem;
+  }
+
+  
+}
+
  
 
 
