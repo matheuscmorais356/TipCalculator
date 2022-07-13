@@ -317,7 +317,7 @@ header {
 
   main {
     height: auto;
-    padding: 0
+    padding: 0;
     background: transparent;
     display: flex;
     justify-content: center;
